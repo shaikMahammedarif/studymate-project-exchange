@@ -1,11 +1,13 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const ProjectShowcase = () => {
+  const navigate = useNavigate();
+
   const projects = [
     {
       id: 1,
@@ -151,6 +153,7 @@ const ProjectShowcase = () => {
             size="lg" 
             variant="outline"
             className="border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white text-lg px-8 py-4 rounded-full font-semibold transition-all duration-300"
+            onClick={() => navigate('/projects')}
           >
             View All Projects
             <ArrowRight className="ml-2 h-5 w-5" />
