@@ -204,7 +204,7 @@ const Footer = () => {
 
       {/* Privacy Policy Modal */}
       <Dialog open={privacyOpen} onOpenChange={setPrivacyOpen}>
-        <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto relative">
+        <DialogContent className="max-w-4xl max-h-[85vh] overflow-y-auto relative top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] fixed">
           <div className="absolute -top-4 -right-4 text-4xl opacity-10 blur-sm">🔒</div>
           <DialogHeader>
             <DialogTitle className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 text-transparent bg-clip-text">
@@ -241,7 +241,7 @@ const Footer = () => {
 
       {/* Terms of Service Modal */}
       <Dialog open={termsOpen} onOpenChange={setTermsOpen}>
-        <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto relative">
+        <DialogContent className="max-w-4xl max-h-[85vh] overflow-y-auto relative top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] fixed">
           <div className="absolute -top-4 -left-4 text-4xl opacity-10 blur-sm">📋</div>
           <DialogHeader>
             <DialogTitle className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 text-transparent bg-clip-text">
@@ -278,7 +278,7 @@ const Footer = () => {
 
       {/* Contact Us Modal */}
       <Dialog open={contactOpen} onOpenChange={setContactOpen}>
-        <DialogContent className="max-w-2xl relative">
+        <DialogContent className="max-w-2xl relative top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] fixed">
           <div className="absolute -top-6 -right-6 text-5xl opacity-10 blur-sm">📱</div>
           <DialogHeader>
             <DialogTitle className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 text-transparent bg-clip-text">
