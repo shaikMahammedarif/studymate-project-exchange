@@ -1,7 +1,7 @@
-
 import React, { useState, useMemo } from 'react';
 import Header from '../components/Header';
 import ProjectSearch from '../components/ProjectSearch';
+import ProjectDetailsDialog from '../components/ProjectDetailsDialog';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -10,6 +10,8 @@ import { ArrowRight } from 'lucide-react';
 const Projects = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedDomain, setSelectedDomain] = useState('All Domains');
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const allProjects = [
     {
@@ -176,105 +178,119 @@ const Projects = () => {
     window.open(formUrl, '_blank');
   };
 
-  return (
-    <div className="min-h-screen bg-gray-50">
-      <Header title="All Projects" showBack={true} />
-      
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <ProjectSearch
-          searchTerm={searchTerm}
-          selectedDomain={selectedDomain}
-          onSearchChange={setSearchTerm}
-          onDomainChange={setSelectedDomain}
-        />
+  const handleViewDemo = (project: any) => {
+    setSelectedProject(project);
+    setIsDialogOpen(true);
+  };
 
-        <div className="mb-6">
-          <div className="flex items-center justify-between">
-            <h2 className="text-2xl font-bold text-gray-900">
-              {filteredProjects.length} Projects Found
-            </h2>
-            <div className="text-sm text-gray-600">
-              {selectedDomain !== 'All Domains' && (
-                <span>in {selectedDomain}</span>
-              )}
+  return (
+    <>
+      <div className="min-h-screen bg-gray-50">
+        <Header title="All Projects" showBack={true} />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <ProjectSearch
+            searchTerm={searchTerm}
+            selectedDomain={selectedDomain}
+            onSearchChange={setSearchTerm}
+            onDomainChange={setSelectedDomain}
+          />
+
+          <div className="mb-6">
+            <div className="flex items-center justify-between">
+              <h2 className="text-2xl font-bold text-gray-900">
+                {filteredProjects.length} Projects Found
+              </h2>
+              <div className="text-sm text-gray-600">
+                {selectedDomain !== 'All Domains' && (
+                  <span>in {selectedDomain}</span>
+                )}
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredProjects.map((project) => (
-            <Card key={project.id} className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg bg-white overflow-hidden">
-              <CardHeader className="pb-4">
-                <div className="flex justify-between items-start mb-2">
-                  <div className="flex items-center gap-2">
-                    <Badge variant="secondary" className="bg-purple-100 text-purple-700 hover:bg-purple-200">
-                      {project.category}
-                    </Badge>
-                    {project.featured && (
-                      <Badge className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white">
-                        Featured
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredProjects.map((project) => (
+              <Card key={project.id} className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg bg-white overflow-hidden">
+                <CardHeader className="pb-4">
+                  <div className="flex justify-between items-start mb-2">
+                    <div className="flex items-center gap-2">
+                      <Badge variant="secondary" className="bg-purple-100 text-purple-700 hover:bg-purple-200">
+                        {project.category}
+                      </Badge>
+                      {project.featured && (
+                        <Badge className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white">
+                          Featured
+                        </Badge>
+                      )}
+                    </div>
+                    <div className="text-right">
+                      <div className="text-2xl font-bold text-green-600">{project.price}</div>
+                      <div className="text-sm text-gray-500">⭐ {project.rating} ({project.students})</div>
+                    </div>
+                  </div>
+                  <CardTitle className="text-xl font-bold text-gray-900 group-hover:text-purple-600 transition-colors">
+                    {project.title}
+                  </CardTitle>
+                  <CardDescription className="text-gray-600 line-clamp-3">
+                    {project.description}
+                  </CardDescription>
+                </CardHeader>
+                
+                <CardContent className="pt-0">
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {project.tech.slice(0, 4).map((tech, index) => (
+                      <Badge key={index} variant="outline" className="text-xs border-gray-300 text-gray-700">
+                        {tech}
+                      </Badge>
+                    ))}
+                    {project.tech.length > 4 && (
+                      <Badge variant="outline" className="text-xs border-gray-300 text-gray-500">
+                        +{project.tech.length - 4} more
                       </Badge>
                     )}
                   </div>
-                  <div className="text-right">
-                    <div className="text-2xl font-bold text-green-600">{project.price}</div>
-                    <div className="text-sm text-gray-500">⭐ {project.rating} ({project.students})</div>
+                  
+                  <div className="flex gap-3">
+                    <Button 
+                      variant="outline" 
+                      size="sm" 
+                      className="flex-1 border-purple-200 text-purple-600 hover:bg-purple-50"
+                      onClick={() => handleViewDemo(project)}
+                    >
+                      👀 Demo
+                    </Button>
+                    <Button 
+                      size="sm" 
+                      className="flex-1 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white"
+                      onClick={() => handleRequestProject(project.title)}
+                    >
+                      Request
+                      <ArrowRight className="ml-1 h-4 w-4" />
+                    </Button>
                   </div>
-                </div>
-                <CardTitle className="text-xl font-bold text-gray-900 group-hover:text-purple-600 transition-colors">
-                  {project.title}
-                </CardTitle>
-                <CardDescription className="text-gray-600 line-clamp-3">
-                  {project.description}
-                </CardDescription>
-              </CardHeader>
-              
-              <CardContent className="pt-0">
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.tech.slice(0, 4).map((tech, index) => (
-                    <Badge key={index} variant="outline" className="text-xs border-gray-300 text-gray-700">
-                      {tech}
-                    </Badge>
-                  ))}
-                  {project.tech.length > 4 && (
-                    <Badge variant="outline" className="text-xs border-gray-300 text-gray-500">
-                      +{project.tech.length - 4} more
-                    </Badge>
-                  )}
-                </div>
-                
-                <div className="flex gap-3">
-                  <Button 
-                    variant="outline" 
-                    size="sm" 
-                    className="flex-1 border-purple-200 text-purple-600 hover:bg-purple-50"
-                    onClick={() => window.open(project.demoLink, '_blank')}
-                  >
-                    👀 Demo
-                  </Button>
-                  <Button 
-                    size="sm" 
-                    className="flex-1 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white"
-                    onClick={() => handleRequestProject(project.title)}
-                  >
-                    Request
-                    <ArrowRight className="ml-1 h-4 w-4" />
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-
-        {filteredProjects.length === 0 && (
-          <div className="text-center py-12">
-            <div className="text-gray-400 text-6xl mb-4">🔍</div>
-            <h3 className="text-xl font-semibold text-gray-600 mb-2">No projects found</h3>
-            <p className="text-gray-500">Try adjusting your search terms or domain filter</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
-        )}
+
+          {filteredProjects.length === 0 && (
+            <div className="text-center py-12">
+              <div className="text-gray-400 text-6xl mb-4">🔍</div>
+              <h3 className="text-xl font-semibold text-gray-600 mb-2">No projects found</h3>
+              <p className="text-gray-500">Try adjusting your search terms or domain filter</p>
+            </div>
+          )}
+        </div>
       </div>
-    </div>
+
+      <ProjectDetailsDialog 
+        project={selectedProject}
+        isOpen={isDialogOpen}
+        onClose={() => setIsDialogOpen(false)}
+        onRequestProject={handleRequestProject}
+      />
+    </>
   );
 };
 
