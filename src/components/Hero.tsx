@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -40,7 +39,7 @@ const Hero = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="border-2 border-white text-white hover:bg-white hover:text-purple-600 text-xs sm:text-base px-4 sm:px-6 py-2 sm:py-3 rounded-full font-semibold transition-all duration-300 w-full sm:w-auto"
+              className="border-2 border-white text-white text-xs sm:text-base px-4 sm:px-6 py-2 sm:py-3 rounded-full font-semibold w-full sm:w-auto"
               onClick={() => document.getElementById('contribute')?.scrollIntoView({ behavior: 'smooth' })}
             >
               💰 Earn with Your Projects
@@ -64,7 +63,6 @@ const Hero = () => {
         </div>
       </div>
       
-      {/* Decorative elements */}
       <div className="absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-full blur-xl"></div>
       <div className="absolute bottom-20 right-10 w-32 h-32 bg-yellow-300/20 rounded-full blur-2xl"></div>
       <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-cyan-300/20 rounded-full blur-lg"></div>
