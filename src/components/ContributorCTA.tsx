@@ -139,7 +139,9 @@ const ContributorCTA = () => {
           </div>
         </div>
       </div>
+      
     </section>
+    
   );
 };
 

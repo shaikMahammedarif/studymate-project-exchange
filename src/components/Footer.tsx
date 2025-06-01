@@ -60,35 +60,43 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {/* Brand */}
             <div className="col-span-1 md:col-span-2 relative">
-              <div className="absolute -top-4 -left-4 text-4xl opacity-20 blur-sm">🎯</div>
-              <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-cyan-400 text-transparent bg-clip-text relative z-10">
-                Zapkits
-              </h3>
-              <p className="text-gray-400 mb-6 max-w-md leading-relaxed relative z-10">
-                Connecting students directly. No middlemen, no inflated prices. 
-                Just authentic projects with real support from fellow students.
-              </p>
-              <div className="flex space-x-4 relative z-10">
-                <button 
-                  onClick={handleEmailClick}
-                  className="text-gray-400 hover:text-white transition-colors transform hover:scale-110 duration-200"
-                >
-                  <span className="text-2xl">📧</span>
-                </button>
-                <button 
-                  onClick={handleWhatsAppClick}
-                  className="text-gray-400 hover:text-white transition-colors transform hover:scale-110 duration-200"
-                >
-                  <span className="text-2xl">📱</span>
-                </button>
-                <button 
-                  onClick={handleTelegramClick}
-                  className="text-gray-400 hover:text-white transition-colors transform hover:scale-110 duration-200"
-                >
-                  <span className="text-2xl">💬</span>
-                </button>
-              </div>
-            </div>
+  <div className="absolute -top-4 -left-4 text-4xl opacity-20 blur-sm">🎯</div>
+  <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-cyan-400 text-transparent bg-clip-text relative z-10">
+    Zapkits
+  </h3>
+  <p className="text-gray-400 mb-6 max-w-md leading-relaxed relative z-10">
+    Connecting students directly. No middlemen, no inflated prices. <br />
+    Just authentic projects with real support from fellow students.
+  </p>
+  <div className="flex space-x-10 relative z-10">
+    <button 
+      onClick={handleEmailClick}
+      className="flex flex-col items-center text-gray-400 hover:text-white transition-colors transform hover:scale-110 duration-200"
+      aria-label="Email"
+    >
+      <span className="text-4xl">📧</span>
+      <span className="mt-1 text-sm font-medium">Email</span>
+    </button>
+
+    <button 
+      onClick={handleWhatsAppClick}
+      className="flex flex-col items-center text-gray-400 hover:text-white transition-colors transform hover:scale-110 duration-200"
+      aria-label="WhatsApp"
+    >
+      <span className="text-4xl">📱</span>
+      <span className="mt-1 text-sm font-medium">WhatsApp</span>
+    </button>
+
+    <button 
+      onClick={handleTelegramClick}
+      className="flex flex-col items-center text-gray-400 hover:text-white transition-colors transform hover:scale-110 duration-200"
+      aria-label="Telegram"
+    >
+      <span className="text-4xl">💬</span>
+      <span className="mt-1 text-sm font-medium">Telegram</span>
+    </button>
+  </div>
+</div>
 
             {/* Quick Links */}
             <div className="relative">
