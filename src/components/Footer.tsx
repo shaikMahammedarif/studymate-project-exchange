@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom"; // ✅ make sure this is at the top of the file
 import React, { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 
@@ -13,7 +13,7 @@ const Footer = () => {
   };
 
   const handleWhatsAppClick = () => {
-    window.open('https://wa.me/918555903625?text=Hello! I need help with StudentMarketplace', '_blank');
+    window.open('https://wa.me/918555903625?text=Hello! I’m interested in a project from Zapkits and would like to know more about pricing and support.', '_blank');
   };
 
   const handleTelegramClick = () => {
@@ -130,46 +130,48 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Categories */}
-            <div className="relative">
-              <div className="absolute -top-2 -left-2 text-3xl opacity-20 blur-sm">🛠️</div>
-              <h4 className="text-lg font-semibold mb-4 relative z-10">Popular Categories</h4>
-              <ul className="space-y-2 relative z-10">
-                <li>
-                  <a 
-                    href="/projects?domain=Web+Development" 
-                    className="text-gray-400 hover:text-white transition-colors hover:underline"
-                  >
-                    Web Development
-                  </a>
-                </li>
-                <li>
-                  <a 
-                    href="/projects?domain=Mobile+Development" 
-                    className="text-gray-400 hover:text-white transition-colors hover:underline"
-                  >
-                    Mobile Apps
-                  </a>
-                </li>
-                <li>
-                  <a 
-                    href="/projects?domain=IoT+%26+Hardware" 
-                    className="text-gray-400 hover:text-white transition-colors hover:underline"
-                  >
-                    IoT & Hardware
-                  </a>
-                </li>
-                <li>
-                  <a 
-                    href="/projects?domain=AI+%26+ML" 
-                    className="text-gray-400 hover:text-white transition-colors hover:underline"
-                  >
-                    AI & Machine Learning
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
+       
+           
+
+<div className="relative">
+  <div className="absolute -top-2 -left-2 text-3xl opacity-20 blur-sm">🛠️</div>
+  <h4 className="text-lg font-semibold mb-4 relative z-10">Popular Categories</h4>
+  <ul className="space-y-2 relative z-10">
+    <li>
+      <button 
+        onClick={handleProjectsClick}
+        className="text-gray-400 hover:text-white transition-colors hover:underline"
+      >
+        Web Development
+      </button>
+    </li>
+    <li>
+      <button 
+        onClick={handleProjectsClick}
+        className="text-gray-400 hover:text-white transition-colors hover:underline"
+      >
+        Mobile Apps
+      </button>
+    </li>
+    <li>
+      <button 
+        onClick={handleProjectsClick}
+        className="text-gray-400 hover:text-white transition-colors hover:underline"
+      >
+        IoT & Hardware
+      </button>
+    </li>
+    <li>
+      <button 
+        onClick={handleProjectsClick}
+        className="text-gray-400 hover:text-white transition-colors hover:underline"
+      >
+        AI & Machine Learning
+      </button>
+    </li>
+  </ul>
+</div>
+</div>
 
           <div className="border-t border-gray-800 mt-12 pt-8 relative">
             <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-2 text-2xl opacity-30">❤️</div>
