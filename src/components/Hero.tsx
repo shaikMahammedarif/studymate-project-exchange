@@ -10,7 +10,7 @@ const Hero = () => {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
         <div className="text-center">
           <div className="inline-block bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
-            <span className="text-sm font-medium">🎓 By Students, For Students</span>
+            <span className="text-sm font-medium">🎓 By Student, For Students</span>
           </div>
           
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
@@ -33,28 +33,29 @@ const Hero = () => {
               className="bg-white text-purple-600 hover:bg-gray-100 text-lg px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
               onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              Explore Projects
+              🔎 Explore Projects
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             
             <Button 
               variant="outline" 
               size="lg"
-              className="border-2 border-white text-white hover:bg-white hover:text-purple-600 text-lg px-8 py-4 rounded-full font-semibold transition-all duration-300"
+              className="border-2 border-white text-purple-600 hover:bg-white hover:text-purple-600 text-lg px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
               onClick={() => document.getElementById('contribute')?.scrollIntoView({ behavior: 'smooth' })}
             >
               💰 Earn with Your Projects
+              <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </div>
           
           <div className="mt-12 flex flex-wrap justify-center items-center gap-8 text-white/70">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-              <span className="text-sm">500+ Happy Students</span>
+              <span className="text-sm">50+ Happy Students</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-              <span className="text-sm">100+ Projects Available</span>
+              <span className="text-sm">10+ Projects Available</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>

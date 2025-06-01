@@ -31,7 +31,7 @@ const Header = ({ title, showBack = false }: HeaderProps) => {
           </div>
           
           <div className="text-lg font-bold bg-gradient-to-r from-purple-600 to-cyan-500 text-transparent bg-clip-text">
-            StudentMarketplace
+            Zapkits
           </div>
         </div>
       </div>

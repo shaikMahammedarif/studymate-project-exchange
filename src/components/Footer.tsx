@@ -9,15 +9,15 @@ const Footer = () => {
   const [contactOpen, setContactOpen] = useState(false);
 
   const handleEmailClick = () => {
-    window.open('mailto:support@studentmarketplace.com', '_blank');
+    window.open('mailto:help.zapkits@gmail.com', '_blank');
   };
 
   const handleWhatsAppClick = () => {
-    window.open('https://wa.me/919876543210?text=Hello! I need help with StudentMarketplace', '_blank');
+    window.open('https://wa.me/918555903625?text=Hello! I need help with StudentMarketplace', '_blank');
   };
 
   const handleTelegramClick = () => {
-    window.open('https://t.me/studentmarketplace', '_blank');
+    window.open('https://t.me/zapkitsmarketplace', '_blank');
   };
 
   const handleProjectsClick = () => {
@@ -62,7 +62,7 @@ const Footer = () => {
             <div className="col-span-1 md:col-span-2 relative">
               <div className="absolute -top-4 -left-4 text-4xl opacity-20 blur-sm">🎯</div>
               <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-cyan-400 text-transparent bg-clip-text relative z-10">
-                StudentMarketplace
+                Zapkits
               </h3>
               <p className="text-gray-400 mb-6 max-w-md leading-relaxed relative z-10">
                 Connecting students directly. No middlemen, no inflated prices. 
@@ -175,7 +175,7 @@ const Footer = () => {
             <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-2 text-2xl opacity-30">❤️</div>
             <div className="flex flex-col md:flex-row justify-between items-center">
               <p className="text-gray-400 text-sm">
-                © {currentYear} StudentMarketplace. Made with ❤️ by students, for students.
+                © {currentYear} Zapkits. Made with ❤️ by students, for students.
               </p>
               <div className="flex space-x-6 mt-4 md:mt-0">
                 <button 
@@ -300,7 +300,7 @@ const Footer = () => {
                 <div className="absolute top-2 right-2 text-2xl opacity-20 group-hover:opacity-40 transition-opacity">📱</div>
                 <div className="text-2xl mb-2">📱</div>
                 <h4 className="font-semibold text-green-800">WhatsApp</h4>
-                <p className="text-green-600">+91 98765 43210</p>
+                <p className="text-green-600">+91 85559 03625</p>
                 <p className="text-sm text-gray-600">24/7 Support Available</p>
               </button>
               
@@ -311,7 +311,7 @@ const Footer = () => {
                 <div className="absolute top-2 right-2 text-2xl opacity-20 group-hover:opacity-40 transition-opacity">📧</div>
                 <div className="text-2xl mb-2">📧</div>
                 <h4 className="font-semibold text-blue-800">Email</h4>
-                <p className="text-blue-600">support@studentmarketplace.com</p>
+                <p className="text-blue-600">help.zapkits@gmail.com</p>
                 <p className="text-sm text-gray-600">Response within 24 hours</p>
               </button>
             </div>
