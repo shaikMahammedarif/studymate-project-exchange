@@ -54,47 +54,47 @@ const TrustIndicators = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-12 sm:py-20 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         {/* Stats Section */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 mb-12 sm:mb-20">
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
-              <div className="text-4xl mb-4">{stat.icon}</div>
-              <div className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">{stat.number}</div>
-              <div className="text-gray-600 font-medium">{stat.label}</div>
+              <div className="text-2xl sm:text-4xl mb-2 sm:mb-4">{stat.icon}</div>
+              <div className="text-xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-1 sm:mb-2">{stat.number}</div>
+              <div className="text-gray-600 font-medium text-xs sm:text-base">{stat.label}</div>
             </div>
           ))}
         </div>
 
         {/* Testimonials Section */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
             What Students Say
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base sm:text-xl text-gray-600 max-w-3xl mx-auto px-4">
             Don't just take our word for it. Here's what our community of students has to say about their experience.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {testimonials.map((testimonial, index) => (
             <Card key={index} className="border-0 shadow-lg bg-white hover:shadow-xl transition-all duration-300">
-              <CardContent className="p-8">
-                <div className="flex items-center mb-4">
+              <CardContent className="p-4 sm:p-8">
+                <div className="flex items-center mb-3 sm:mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <span key={i} className="text-yellow-400 text-xl">⭐</span>
+                    <span key={i} className="text-yellow-400 text-lg sm:text-xl">⭐</span>
                   ))}
                 </div>
                 
-                <p className="text-gray-700 mb-6 italic leading-relaxed">
+                <p className="text-gray-700 mb-4 sm:mb-6 italic leading-relaxed text-sm sm:text-base">
                   "{testimonial.text}"
                 </p>
                 
-                <div className="border-t pt-4">
-                  <div className="font-bold text-gray-900">{testimonial.name}</div>
-                  <div className="text-sm text-gray-600">{testimonial.course}</div>
-                  <div className="text-sm text-gray-500">{testimonial.college}</div>
+                <div className="border-t pt-3 sm:pt-4">
+                  <div className="font-bold text-gray-900 text-sm sm:text-base">{testimonial.name}</div>
+                  <div className="text-xs sm:text-sm text-gray-600">{testimonial.course}</div>
+                  <div className="text-xs sm:text-sm text-gray-500">{testimonial.college}</div>
                   <div className="text-xs text-purple-600 mt-2 bg-purple-50 px-2 py-1 rounded-full inline-block">
                     Project: {testimonial.project}
                   </div>
@@ -105,36 +105,36 @@ const TrustIndicators = () => {
         </div>
 
         {/* Trust Badges */}
-        <div className="mt-20 bg-white rounded-3xl p-8 md:p-12 shadow-lg">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+        <div className="mt-12 sm:mt-20 bg-white rounded-3xl p-6 sm:p-8 md:p-12 shadow-lg">
+          <div className="text-center mb-6 sm:mb-8">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4">
               Why Trust Us?
             </h3>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-green-600 text-2xl">🔒</span>
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                <span className="text-green-600 text-xl sm:text-2xl">🔒</span>
               </div>
-              <h4 className="font-bold text-gray-900 mb-2">Secure Payments</h4>
-              <p className="text-gray-600 text-sm">All transactions via trusted UPI. No card details stored.</p>
+              <h4 className="font-bold text-gray-900 mb-2 text-sm sm:text-base">Secure Payments</h4>
+              <p className="text-gray-600 text-xs sm:text-sm">All transactions via trusted UPI. No card details stored.</p>
             </div>
             
             <div className="text-center">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-blue-600 text-2xl">✅</span>
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                <span className="text-blue-600 text-xl sm:text-2xl">✅</span>
               </div>
-              <h4 className="font-bold text-gray-900 mb-2">Quality Guaranteed</h4>
-              <p className="text-gray-600 text-sm">Every project manually reviewed by our expert team.</p>
+              <h4 className="font-bold text-gray-900 mb-2 text-sm sm:text-base">Quality Guaranteed</h4>
+              <p className="text-gray-600 text-xs sm:text-sm">Every project manually reviewed by our expert team.</p>
             </div>
             
             <div className="text-center">
-              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-purple-600 text-2xl">📱</span>
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                <span className="text-purple-600 text-xl sm:text-2xl">📱</span>
               </div>
-              <h4 className="font-bold text-gray-900 mb-2">Instant Support</h4>
-              <p className="text-gray-600 text-sm">Get help immediately via WhatsApp from project creators.</p>
+              <h4 className="font-bold text-gray-900 mb-2 text-sm sm:text-base">Instant Support</h4>
+              <p className="text-gray-600 text-xs sm:text-sm">Get help immediately via WhatsApp from project creators.</p>
             </div>
           </div>
         </div>
